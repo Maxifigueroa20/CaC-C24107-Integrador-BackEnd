@@ -15,6 +15,9 @@ import java.util.ArrayList;
 @WebServlet("/juegos")
 public class Controlador extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "*");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type");
         Conexion conexion = new Conexion();
         Connection conn = conexion.getConnection();
         try {
@@ -41,6 +44,9 @@ public class Controlador extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "*");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type");
         Conexion conexion = new Conexion();
         Connection conn = conexion.getConnection();
         try {
